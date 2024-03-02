@@ -8,4 +8,5 @@ public interface UserService {
     String join(UserCreateReqDto userCreateReqDto);
 
     UserSearchResDto search(String nickname);
+
 }
