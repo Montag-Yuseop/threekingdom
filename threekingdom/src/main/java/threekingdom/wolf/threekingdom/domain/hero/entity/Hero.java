@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import threekingdom.wolf.threekingdom.domain.deck.entity.Deck;
+import threekingdom.wolf.threekingdom.domain.item.entity.Item;
 import threekingdom.wolf.threekingdom.domain.skill.entity.Skill;
 
 import java.util.ArrayList;
@@ -35,5 +36,16 @@ public class Hero {
     @OneToMany(mappedBy = "hero", fetch = FetchType.LAZY)
     private List<Skill> skills = new ArrayList<>();
 
+    @OneToMany(mappedBy = "hero", fetch = FetchType.LAZY)
+    private List<Item> items = new ArrayList<>();
+
+    public static Hero from(Deck deck, String heroName, int heroUpgrade, int heroLevel) {
+        return Hero.builder()
+                .deck(deck)
+                .heroName(heroName)
+                .heroUpgrade(heroUpgrade)
+                .heroLevel(heroLevel)
+                .build();
+    }
 
 }

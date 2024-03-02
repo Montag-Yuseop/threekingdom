@@ -32,4 +32,10 @@ public class Deck {
     @OneToMany(mappedBy = "deck", fetch = FetchType.LAZY)
     private List<Hero> heroes = new ArrayList<>();
 
+    public static Deck from(Season season) {
+        return Deck.builder()
+                .season(season)
+                .build();
+    }
+
 }

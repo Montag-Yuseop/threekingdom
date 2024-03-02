@@ -1,14 +1,12 @@
 package threekingdom.wolf.threekingdom.domain.skill.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import threekingdom.wolf.threekingdom.domain.hero.entity.Hero;
 
 @Entity
 @Builder
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Skill {
@@ -29,4 +27,12 @@ public class Skill {
 
     @Column(name = "skill_info")
     private String skillInfo;
+
+    public static Skill from(Hero hero, String skillName, int skillLevel) {
+        return Skill.builder()
+                .hero(hero)
+                .skillName(skillName)
+                .skillLevel(skillLevel)
+                .build();
+    }
 }

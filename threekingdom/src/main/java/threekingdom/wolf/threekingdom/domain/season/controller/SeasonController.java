@@ -17,7 +17,6 @@ public class SeasonController {
 
     private final SeasonService seasonService;
 
-    @Transactional
     @PostMapping
     public ResponseEntity<String> createSeason(@Valid @RequestBody CreateSeasonReqDto createSeasonReqDto) {
 

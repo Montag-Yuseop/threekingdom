@@ -1,10 +1,8 @@
 package threekingdom.wolf.threekingdom.domain.item.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import threekingdom.wolf.threekingdom.domain.hero.entity.Hero;
 
 @Entity
 @Builder
@@ -18,4 +16,15 @@ public class Item {
     private Long itemId;
 
     private String itemSkill;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hero_id")
+    private Hero hero;
+
+    public static Item from(Hero hero, String itemSkill) {
+        return Item.builder()
+                .hero(hero)
+                .itemSkill(itemSkill)
+                .build();
+    }
 }
