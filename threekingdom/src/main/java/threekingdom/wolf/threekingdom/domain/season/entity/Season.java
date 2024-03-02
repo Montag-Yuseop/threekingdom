@@ -17,11 +17,13 @@ public class Season {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int seasonId;
+    private Long seasonId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    private int seasonNum;
 
     private String seasonName;
 
