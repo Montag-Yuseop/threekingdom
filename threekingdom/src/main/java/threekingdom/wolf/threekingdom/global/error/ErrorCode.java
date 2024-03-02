@@ -9,7 +9,8 @@ public enum ErrorCode {
     ALREADY_EXIST_USER(HttpStatus.BAD_REQUEST, "002", "이미 존재하는 닉네임입니다."),
     NO_SEARCH_USERS(HttpStatus.BAD_REQUEST, "003", "검색된 유저가 없습니다."),
 
-    NO_EXIST_SEASON(HttpStatus.BAD_REQUEST, "001", "시즌이 없습니다.")
+    NO_EXIST_SEASON(HttpStatus.BAD_REQUEST, "001", "시즌이 없습니다."),
+    ALREADY_EXIST_SEASON(HttpStatus.BAD_REQUEST, "002", "해당 유저의 시즌이 이미 존재합니다."),
     ;
 
     ErrorCode(HttpStatus httpStatus, String errorCode, String message) {

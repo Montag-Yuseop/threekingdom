@@ -3,6 +3,9 @@ package threekingdom.wolf.threekingdom.global.entity;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
 public enum SeasonCode {
 
@@ -20,8 +23,15 @@ public enum SeasonCode {
     SEASON12(12, "영웅집결"),
     SEASON13(13, "병전사시"),
     SEASON14(14, "양번대전"),
-
     ;
+
+    private static final Map<Integer, String> seasonNameByNum = new HashMap<>();
+
+    static {
+        for (SeasonCode season : values()) {
+            seasonNameByNum.put(season.seasonNum, season.seasonName);
+        }
+    }
 
 
     SeasonCode(int seasonNum, String seasonName) {
@@ -31,4 +41,8 @@ public enum SeasonCode {
 
     private int seasonNum;
     private String seasonName;
+
+    public static String getSeasonName(int seasonNum) {
+        return seasonNameByNum.get(seasonNum);
+    }
 }

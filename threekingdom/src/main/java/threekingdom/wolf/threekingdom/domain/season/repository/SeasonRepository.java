@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface SeasonRepository extends JpaRepository<Season, Long> {
 
-    List<Season> findAllByUser(User user);
+    List<Season> findAllByUserOrderBySeasonNumAsc(User user);
 
 }

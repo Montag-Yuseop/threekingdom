@@ -8,4 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/decks")
 public class DeckController {
+
+    // 덱 등록
+
+    // 덱 조회
+
+    // 덱 수정
 }

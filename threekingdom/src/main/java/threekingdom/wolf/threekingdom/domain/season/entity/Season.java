@@ -29,4 +29,12 @@ public class Season {
 
     @OneToMany(mappedBy = "season", fetch = FetchType.LAZY)
     private List<Deck> decks = new ArrayList<>();
+
+    public static Season from(User user, int seasonNum, String seasonName) {
+        return Season.builder()
+                .user(user)
+                .seasonNum(seasonNum)
+                .seasonName(seasonName)
+                .build();
+    }
 }

@@ -11,8 +11,11 @@ import lombok.*;
 @ToString
 @Getter
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class SeasonReqDto {
+public class CreateSeasonReqDto {
 
     @NotNull
     private int seasonNum;
+
+    @NotNull
+    private Long userId;
 }
