@@ -3,6 +3,7 @@ package threekingdom.wolf.threekingdom.domain.item.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import threekingdom.wolf.threekingdom.domain.hero.entity.Hero;
+import threekingdom.wolf.threekingdom.domain.item.dto.reqeust.ModifyItemReqDto;
 
 @Entity
 @Builder
@@ -26,5 +27,9 @@ public class Item {
                 .hero(hero)
                 .itemSkill(itemSkill)
                 .build();
+    }
+
+    public void update(ModifyItemReqDto modifyItemReqDto) {
+        this.itemSkill = modifyItemReqDto.getItemSkill();
     }
 }

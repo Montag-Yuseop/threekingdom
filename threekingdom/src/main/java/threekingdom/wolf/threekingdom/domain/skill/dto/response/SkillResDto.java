@@ -12,11 +12,13 @@ import lombok.*;
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class SkillResDto {
 
+    private Long skillId;
     private String skillName;
     private int skillLevel;
 
-    public static SkillResDto of(String skillName, int skillLevel) {
+    public static SkillResDto of(Long skillId, String skillName, int skillLevel) {
         return SkillResDto.builder()
+                .skillId(skillId)
                 .skillName(skillName)
                 .skillLevel(skillLevel)
                 .build();

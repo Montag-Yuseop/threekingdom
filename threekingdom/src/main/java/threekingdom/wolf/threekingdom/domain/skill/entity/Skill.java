@@ -3,6 +3,7 @@ package threekingdom.wolf.threekingdom.domain.skill.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import threekingdom.wolf.threekingdom.domain.hero.entity.Hero;
+import threekingdom.wolf.threekingdom.domain.skill.dto.request.ModifySkillReqDto;
 
 @Entity
 @Builder
@@ -34,5 +35,10 @@ public class Skill {
                 .skillName(skillName)
                 .skillLevel(skillLevel)
                 .build();
+    }
+
+    public void update(ModifySkillReqDto modifySkillReqDto) {
+        this.skillName = modifySkillReqDto.getSkillName();
+        this.skillLevel = modifySkillReqDto.getSkillLevel();
     }
 }

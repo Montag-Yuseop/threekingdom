@@ -23,13 +23,13 @@ public class Deck {
     @JoinColumn(name = "season_id")
     private Season season;
 
-    @OneToMany(mappedBy = "myDeck", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "myDeck", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Battle> myBattle;
 
-    @OneToMany(mappedBy = "enemyDeck", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "enemyDeck", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Battle> enemyBattle;
 
-    @OneToMany(mappedBy = "deck", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "deck", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Hero> heroes = new ArrayList<>();
 
     public static Deck from(Season season) {

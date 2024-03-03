@@ -17,10 +17,12 @@ import java.util.List;
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class SearchDeckResDto {
 
+    private Long deckId;
     private List<HeroResDto> heroResDtoList = new ArrayList<>();
 
-    public static SearchDeckResDto of(List<HeroResDto> heroResDtoList) {
+    public static SearchDeckResDto of(Long deckId, List<HeroResDto> heroResDtoList) {
         return SearchDeckResDto.builder()
+                .deckId(deckId)
                 .heroResDtoList(heroResDtoList)
                 .build();
     }

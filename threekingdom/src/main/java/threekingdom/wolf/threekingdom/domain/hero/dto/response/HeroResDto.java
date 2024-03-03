@@ -17,14 +17,16 @@ import java.util.List;
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class HeroResDto {
 
+    private Long heroId;
     private String heroName;
     private int heroLevel;
     private int heroUpgrade;
     private List<ItemResDto> itemResDtoList = new ArrayList<>();
     private List<SkillResDto> skillResDtoList = new ArrayList<>();
 
-    public static HeroResDto of(String heroName, int heroLevel, int heroUpgrade, List<ItemResDto> itemResDtoList, List<SkillResDto> skillResDtoList) {
+    public static HeroResDto of(Long heroId, String heroName, int heroLevel, int heroUpgrade, List<ItemResDto> itemResDtoList, List<SkillResDto> skillResDtoList) {
         return HeroResDto.builder()
+                .heroId(heroId)
                 .heroName(heroName)
                 .heroLevel(heroLevel)
                 .heroUpgrade(heroUpgrade)
