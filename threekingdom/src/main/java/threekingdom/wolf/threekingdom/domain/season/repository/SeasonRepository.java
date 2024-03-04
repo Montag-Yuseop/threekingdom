@@ -12,7 +12,7 @@ public interface SeasonRepository extends JpaRepository<Season, Long> {
 
     List<Season> findAllByUserOrderBySeasonNumAsc(User user);
 
-    Optional<Season> findBySeasonNum(int seasonNum);
+    Optional<Season> findBySeasonNumAndUser(int seasonNum, User user);
 
     Optional<Season> findAllByUserAndSeasonNum(User user, int seasonNum);
 

@@ -19,12 +19,19 @@ public enum ErrorCode {
 
     // Deck
     NO_EXIST_DECK(HttpStatus.BAD_REQUEST, "001", "덱이 없습니다."),
+    NO_EXIST_USER(HttpStatus.BAD_REQUEST, "002", "유저가 없습니다."),
     
     // Item
     NO_EXIST_ITEM(HttpStatus.BAD_REQUEST, "001", "아이템이 없습니다."),
     
     // SKill
-    NO_EXIST_SKILL(HttpStatus.BAD_REQUEST, "001", "스킬이 없습니다.")
+    NO_EXIST_SKILL(HttpStatus.BAD_REQUEST, "001", "스킬이 없습니다."),
+    
+    // Battle
+    NO_EXIST_MY_DECK(HttpStatus.BAD_REQUEST, "001", "사용자의 덱이 없습니다."),
+    NO_EXIST_ENEMY_DECK(HttpStatus.BAD_REQUEST, "002", "상대방의 덱이 없습니다."),
+    NO_EXIST_BATTLE_HISTORY(HttpStatus.BAD_REQUEST, "003", "전적 검색 결과가 없습니다."),
+    DECK_ID_IS_SAME(HttpStatus.BAD_REQUEST, "004", "같은 덱 아이디를 선택할 수 없습니다."),
     ;
 
     ErrorCode(HttpStatus httpStatus, String errorCode, String message) {

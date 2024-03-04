@@ -49,8 +49,17 @@ public class DeckServiceImpl implements DeckService {
     @Override
     @Transactional
     public String createDeck(CreateDeckReqDto createDeckReqDto) {
+
+        // 유저를 가져온다
+        Optional<User> user = userRepository.findById(createDeckReqDto.getUserId());
+        if(user.isEmpty()) {
+            throw new DeckException(ErrorCode.NO_EXIST_USER);
+        }
+
+        User getUser = user.get();
+
         // 시즌을 가져온다
-        Optional<Season> season = seasonRepository.findBySeasonNum(createDeckReqDto.getSeasonNum());
+        Optional<Season> season = seasonRepository.findBySeasonNumAndUser(createDeckReqDto.getSeasonNum(), getUser);
 
         // 해당 유저에게 그 시즌이 없다면 오류 반환
         if(season.isEmpty()) {

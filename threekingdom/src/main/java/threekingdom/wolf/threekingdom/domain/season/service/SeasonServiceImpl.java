@@ -56,6 +56,7 @@ public class SeasonServiceImpl implements SeasonService {
     }
 
     @Override
+    @Transactional
     public String join(CreateSeasonReqDto createSeasonReqDto) {
 
         // SeasonNum과 UserId를 받아서 새로운 시즌을 저장한다

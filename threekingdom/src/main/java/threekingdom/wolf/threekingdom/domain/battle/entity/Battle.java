@@ -27,4 +27,20 @@ public class Battle {
     private int winCount;
 
 
+    public static Battle from(Deck myDeck, Deck enemyDeck, int winCount) {
+        return Battle.builder()
+                .myDeck(myDeck)
+                .enemyDeck(enemyDeck)
+                .battleCount(1)
+                .winCount(winCount)
+                .build();
+    }
+
+    public void update(boolean isWin) {
+        this.battleCount += 1;
+        if(isWin) {
+            this.winCount += 1;
+        }
+    }
+
 }
