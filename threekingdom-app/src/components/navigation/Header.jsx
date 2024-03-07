@@ -1,15 +1,14 @@
-
 import theme from "@assets/styles/theme";
+import ImageBox from "@components/box/ImageBox";
 import styled from "@emotion/styled";
-
+import wolf from "@assets/images/wolf.jpg";
 
 function Header() {
-
-    return(
-        <MainContainer>
-            헤더바
-        </MainContainer>
-    )
+  return (
+    <MainContainer>
+      <ImageBox src={wolf} alt="이리단 마크" />
+    </MainContainer>
+  );
 }
 
 export default Header;
@@ -21,4 +20,6 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
+
+// const HeaderTitle = styled.div``;
