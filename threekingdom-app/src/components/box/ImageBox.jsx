@@ -3,10 +3,14 @@ import PropTypes from "prop-types";
 const { default: styled } = require("@emotion/styled");
 
 const ImageBoxStyle = styled.div`
-  width: 7.5rem;
-  height: 7.5rem;
+  display: flex;
+  margin: 10px;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 100px;
   overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
 `;
 
 const Image = styled.img`
