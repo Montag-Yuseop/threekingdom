@@ -1,3 +1,7 @@
+import CreateDeck from "@components/deck/CreateDeck";
+import CreateUser from "@components/deck/CreateUser";
+import DeckInitialPage from "@components/deck/DeckInitialPage";
+import ShowDeckList from "@components/deck/ShowDeckList";
 import ErrorPage from "@pages/ErrorPage";
 import BattlePage from "@pages/battle/BattlePage";
 import DeckPage from "@pages/deck/DeckPage";
@@ -29,6 +33,32 @@ const routePaths = [
         path: "deck",
         label: "Deck",
         element: <DeckPage />,
+        children: [
+          {
+            id: 5,
+            path: "create-user",
+            label: "CreateUser",
+            element: <CreateUser />,
+          },
+          {
+            id: 6,
+            path: "create-deck",
+            label: "CreateDeck",
+            element: <CreateDeck />,
+          },
+          {
+            id: 7,
+            path: "show-deck",
+            label: "ShowDeck",
+            element: <ShowDeckList />,
+          },
+          {
+            id: 7,
+            path: "",
+            label: "Initail",
+            element: <DeckInitialPage />,
+          },
+        ],
       },
       {
         id: 4,

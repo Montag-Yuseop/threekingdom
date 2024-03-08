@@ -11,6 +11,7 @@ function ViewPage() {
 
 const MainContainer = styled.div`
   height: 80%;
+  width: 100%;
 `;
 
 export default ViewPage;
