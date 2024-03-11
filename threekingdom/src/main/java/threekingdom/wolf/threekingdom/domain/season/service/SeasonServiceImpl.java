@@ -61,13 +61,18 @@ public class SeasonServiceImpl implements SeasonService {
 
         // SeasonNum과 UserId를 받아서 새로운 시즌을 저장한다
         int seasonNum = createSeasonReqDto.getSeasonNum();
-        Long userId = createSeasonReqDto.getUserId();
-        Optional<User> user = userRepository.findById(userId);
-        User getUser = user.get();
+        String nickname = createSeasonReqDto.getNickname();
+        Optional<User> user = userRepository.findByNickname(nickname);
 
         if(user.isEmpty()) {
-            throw new UserException(ErrorCode.NO_SEARCH_USERS);
+            User newUser = User.builder()
+                    .nickname(nickname)
+                    .build();
+            userRepository.save(newUser);
+//            throw new UserException(ErrorCode.NO_SEARCH_USERS);
         }
+
+        User getUser = user.get();
 
         // 해당 유저의 season이 이미 존재하면 오류를 출력한다.
         List<Season> seasons = getUser.getSeasons();

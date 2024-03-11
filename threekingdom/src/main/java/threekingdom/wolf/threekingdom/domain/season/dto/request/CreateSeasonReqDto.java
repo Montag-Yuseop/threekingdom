@@ -17,5 +17,5 @@ public class CreateSeasonReqDto {
     private int seasonNum;
 
     @NotNull
-    private Long userId;
+    private String nickname;
 }
