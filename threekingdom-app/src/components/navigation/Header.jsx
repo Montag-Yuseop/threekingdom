@@ -19,6 +19,7 @@ const MainContainer = styled.div`
   height: 10%;
   display: flex;
   align-items: center;
+  user-select: none;
 `;
 
 const HeaderTitle = styled.div`

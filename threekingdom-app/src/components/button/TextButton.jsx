@@ -1,3 +1,4 @@
+import theme from "@assets/styles/theme";
 import { PropTypes } from "prop-types";
 
 const { default: styled } = require("@emotion/styled");
@@ -10,11 +11,16 @@ const StyledButton = styled.button`
   margin: 5px;
   border: none;
   border-radius: 4px;
-  background-color: #3498db;
-  color: white;
+  background-color: ${theme.primary2};
+  color: black;
+  font-size: 13px;
   cursor: pointer;
   &:hover {
-    background-color: #2980b9;
+    background-color: ${theme.primary1};
+    color: white;
+    width: 8.5rem;
+    height: 3.5rem;
+    font-size: 15px;
   }
 `;
 

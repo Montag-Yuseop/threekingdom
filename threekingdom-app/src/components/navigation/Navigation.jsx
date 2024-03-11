@@ -51,7 +51,8 @@ const IconButton = styled.button`
   height: 3rem;
 
   &:hover {
-    background-color: ${theme.primary1};
+    height: 4rem;
+    width: 4rem;
   }
 
   &:focus {

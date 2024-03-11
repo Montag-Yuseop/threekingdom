@@ -11,6 +11,7 @@ const ImageBoxStyle = styled.div`
   overflow: hidden;
   align-items: center;
   flex-shrink: 0;
+  user-select: none;
 `;
 
 const Image = styled.img`

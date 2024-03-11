@@ -1,3 +1,6 @@
+import BattleInitialPage from "@components/battle/BattleInitialPage";
+import CreateBattle from "@components/battle/CreateBattle";
+import ShowBattle from "@components/battle/ShowBattle";
 import CreateDeck from "@components/deck/CreateDeck";
 import CreateUser from "@components/deck/CreateUser";
 import DeckInitialPage from "@components/deck/DeckInitialPage";
@@ -65,6 +68,26 @@ const routePaths = [
         path: "battle",
         label: "Battle",
         element: <BattlePage />,
+        children: [
+          {
+            id: 8,
+            path: "create-battle",
+            label: "CreateBattle",
+            element: <CreateBattle />,
+          },
+          {
+            id: 9,
+            path: "show-battle",
+            label: "ShowBattle",
+            element: <ShowBattle />,
+          },
+          {
+            id: 10,
+            path: "",
+            label: "Initail",
+            element: <BattleInitialPage />,
+          },
+        ],
       },
     ],
   },
